@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Parallax Scrolling Website | Vanilla Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png" id="stars">
+        <img src="moon.png" id="moon">
+        <img src="mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>The Moon is Earth's largest natural satellite. We usually see it in the night sky. Some other planets also have moons or natural satellites.
+            Our moon is about a quarter the size of the Earth. Because it is far away it looks small, <br><br> about half a degree wide. The gravity on the moon is one-sixth of the Earth's gravity.[8] It means that something will be one-sixth as heavy on the Moon than on Earth.The Moon being round, half of it is lit up by the sun. As it goes around (or orbits) the Earth, sometimes the side that people on Earth can see is all lit brightly. Other times only a small part of the side we see is lit. This is because the Moon does not send out its own light. People only see the parts that are being lit by sunlight. These different stages are called Phases of the Moon.
+<br><br>
+            It takes the Moon about 29.53 days (29 days, 12 hours, 44 minutes) to complete the cycle, from big and bright to small and dim and back to big and bright. The phase when the Moon passes between the Earth and Sun is called the new moon. The next phase of the moon is called the "waxing crescent", followed by the "first quarter", "waxing gibbous", then to a full moon. A full Moon occurs when the moon and sun are on opposite sides of the Earth. As the Moon continues its orbit it becomes a "waning gibbous", "third quarter", "waning crescent", and finally back to a new moon. People used the moon to measure time. A month is approximately equal in time to a lunar cycle. </p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY
+            stars.style.left = value * 0.25 +'px';
+            moon.style.top = value * 1.05 +'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 +'px';
+            mountains_front.style.top = value * 0 +'px';
+            text.style.marginRight = value * 4 +'px';
+            text.style.marginTop = value * 1.5 +'px';
+            btn.style.marginTop = value * 1.5 +'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
